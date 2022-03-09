@@ -1,0 +1,104 @@
+---
+
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>browse the web!</title>
+	</head>
+	<body>
+		<header>
+			<span class="washed">browse the web!</span>
+		</header>
+		<main>
+			<article>
+				<input type="text" placeholder="doesn't work yet">
+			</article>
+			<aside>
+				<p>
+					<a href="https://manczak.net">my website</a>
+					|
+					<span class="washed">Jakub Mańczak</span>
+					|
+					<a href="https://github.com/jakubmanczak">my github</a>
+				</p>
+			</aside>
+		</main>
+		<footer class="washed">
+			<p>start.manczak.net ~ 2022 <br /> © Jakub Mańczak</p>
+		</footer>
+	</body>
+</html>
+
+<style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@600&display=swap');
+	:root{
+		--dark1: #1a1a1a;
+		--dark2: #2a2a2a;
+		--lite1: #ffffff;
+		--lite2: #f0f0f0;
+		--washed: #8d8d8d;
+		--purp1: #9072ca;
+		--purp2: #40325e;
+	}
+	body{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 95vh;
+
+		background-color: var(--dark1);
+		color: var(--lite2);
+		.washed{ color: var(--washed); }
+
+		font-family: 'Quicksand', sans-serif;
+		text-align: center;
+
+		header{
+			font-family: 'Lexend', sans-serif;
+		}
+
+		input{
+			background-color: var(--dark1);
+			border: 2px solid var(--dark2);
+			border-radius: 1.5rem;
+			color: var(--lite2);
+			padding: .3rem 1rem;
+			font-size: 1.25rem;
+			font-family: 'Quicksand', sans-serif;
+			min-width: 16ch;
+			transition-duration: 150ms;
+			/* text-align: center; */
+			&:focus{
+				outline: none;
+				border: 2px solid var(--purp1);
+				min-width: 48ch;
+			}
+		}
+
+		a {
+			--background-link-color: var(--dark2);
+			text-decoration: none;
+			color: var(--purp1);
+			// color: inherit;
+			outline: none;
+			background: linear-gradient(
+				to bottom,
+				var(--background-link-color) 0%,
+				var(--background-link-color) 100%
+			);
+			background-position: 0 100%;
+			background-repeat: repeat-x;
+			background-size: 2px 2px;
+			transition-duration: 150ms;
+			&:hover,
+			&:focus {
+				background-size: 2px 1.3rem;
+			}
+		}
+
+	}
+</style>
